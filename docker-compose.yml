@@ -1,0 +1,23 @@
+
+
+services:
+  server:
+    build: ./server
+    container_name: chatapp-server
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./server/.env
+    restart: unless-stopped
+
+  client:
+    build:
+      context: ./client
+      args:
+        VITE_BACKEND_URL: http://localhost:5000
+    container_name: chatapp-client
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
+    restart: unless-stopped
