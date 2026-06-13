@@ -32,5 +32,5 @@ jobs:
           context: ./client
           push: true
           build-args: |
-            VITE_BACKEND_URL=http://laxmikant-chatapp.duckdns.org
+            VITE_BACKEND_URL=https://laxmikant-chatapp.duckdns.org
           tags: laxmikant07/chatapp-client:latest
