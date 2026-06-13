@@ -32,5 +32,5 @@ jobs:
           context: ./client
           push: true
           build-args: |
-            VITE_BACKEND_URL=http://localhost:5000
+            VITE_BACKEND_URL=http://13.51.204.208:5000
           tags: laxmikant07/chatapp-client:latest
