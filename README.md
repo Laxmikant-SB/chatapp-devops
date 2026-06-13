@@ -13,6 +13,7 @@
 
 🌐 **[Live Demo →](http://13.51.204.208:8080)**
 
+http://13.51.204.208:8080
 </div>
 
 ---
@@ -56,7 +57,7 @@ Every part of the pipeline below was built, tested, and deployed manually as a l
 
 <div align="center">
 
-| Login Page | Chat Interface |
+| Login Page | GitHub Actions |
 |:---:|:---:|
 | ![Login](docs/login-screenshot.png) | ![Chat](docs/chat-screenshot.png) |
 
@@ -171,21 +172,24 @@ This creates:
 ---
 
 ## 📁 Project Structure
-chatapp-devops/
-├── client/ # React frontend
-│ ├── Dockerfile
-│ ├── nginx.conf
-│ └── src/
-├── server/ # Node.js backend
-│ ├── Dockerfile
-│ └── ...
-├── k8s/ # Kubernetes manifests
-│ ├── server-deployment.yaml
-│ └── client-deployment.yaml
-├── .github/workflows/ # CI/CD pipeline
-│ └── docker-build.yml
-├── docker-compose.yml
-└── README.md
+
+
+chatapp-devops/                                                      
+├── client/                  # React frontend                                                         
+│   ├── Dockerfile                                                                                        
+│   ├── nginx.conf                                                                                                 
+│   └── src/                                                   
+├── server/                  # Node.js backend                                                                
+│   ├── Dockerfile                                                                         
+│   └── ...                                                                         
+├── k8s/                      # Kubernetes manifests                                                              
+│   ├── server-deployment.yaml                                                   
+│   └── client-deployment.yaml                                                   
+├── .github/workflows/        # CI/CD pipeline                                                    
+│   └── docker-build.yml                                                   
+├── docker-compose.yml                                                   
+└── README.md                                                                                                      
+
 ---
 
 ## 🎯 What This Project Demonstrates
