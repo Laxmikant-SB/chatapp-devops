@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatapp-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chatapp-server
+  template:
+    metadata:
+      labels:
+        app: chatapp-server
+    spec:
+      containers:
+        - name: chatapp-server
+          image: laxmikant07/chatapp-server:latest
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - secretRef:
+                name: chatapp-server-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chatapp-server-service
+spec:
+  type: NodePort
+  selector:
+    app: chatapp-server
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30500
